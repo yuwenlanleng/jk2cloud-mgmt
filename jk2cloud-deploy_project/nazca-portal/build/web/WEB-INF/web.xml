@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <filter>
+        <filter-name>portal</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>portal</filter-name>
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>portal</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>HttpRPCServlet</servlet-name>
+        <servlet-class>com.nazca.io.httprpc.server.DefaultHttpRPCServlet</servlet-class>
+        <init-param>
+            <param-name>projectName</param-name>
+            <param-value>portal</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HttpRPCServlet</servlet-name>
+        <url-pattern>/rpc</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+</web-app>

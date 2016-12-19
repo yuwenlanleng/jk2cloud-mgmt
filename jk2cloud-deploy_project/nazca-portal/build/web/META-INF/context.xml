@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/jk2cloud-portal">
+  <!--<Resource driverClassName="com.mysql.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory" maxActive="64" maxIdle="32" maxWait="5000" minIdle="16" name="portalPU" password="user2345" type="javax.sql.DataSource" url="jdbc:mysql://172.16.100.26:3306/jk2cloud_portal?useUnicode=true&amp;characterEncoding=utf-8" username="user2"/>-->
+</Context>

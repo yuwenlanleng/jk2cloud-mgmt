@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="http://172.16.100.87:8080/jk2cloud-portal/app" href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>云集客信息管理系统</title>
+        <vendor>北京英智兴达信息技术有限公司</vendor>
+        <homepage href="http://172.16.100.87:8080/jk2cloud-portal"/>
+        <description>云集客信息管理</description>
+        <description kind="short">云集客信息管理系统</description>
+    </information>
+    <update check="always"/>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.6+" java-vm-args="-Dsun.java2d.noddraw=true -Xms32m -Xmx1024m -XX:PermSize=32M -XX:MaxPermSize=128m"/>
+        <jar href="nazca-installer.jar" main="true"/>
+        <jar href="lib/deploy-client-common.jar"/>
+        <jar href="lib/commons-io-2.2.jar"/>
+        <jar href="lib/javax-servlet-3.0.jar"/>
+        <jar href="lib/log4j-1.2.15.jar"/>
+        <jar href="lib/mail-api.jar"/>
+        <jar href="lib/timingframework-1.1.jar"/>
+        <jar href="lib/timingframework-4.1.jar"/>
+        <jar href="lib/nazca-common-2.4.2.109.jar"/>
+        <jar href="lib/nazca-deploy-1.9.8.908.jar"/>
+        <jar href="lib/nazca-feedback-1.9.0.867.jar"/>
+        <jar href="lib/nazca-ui-2.1.4.1117.jar"/>
+        <jar href="lib/nazca-wizard-2.1.5-1119.jar"/>
+        <jar href="lib/svnkit-1.3.0.jar"/>
+        <jar href="lib/swingx-core-1.6.2.jar"/>
+        <property name="nazca.portal.url" value="http://172.16.100.87:8080/jk2cloud-portal"/>
+        <property name="nazca.svn.addr" value="http://172.16.100.87"/>
+        <property name="nazca.svn.loginname" value="test"/>
+        <property name="nazca.svn.password" value="test"/>
+    </resources>
+    <application-desc main-class="org.bjtrc.nazca.installer.StartOAInstaller">
+    </application-desc>
+</jnlp>

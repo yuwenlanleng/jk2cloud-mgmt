@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+    
+    <package name="valid" extends="json-default">
+        <action name="checkValidCode" class="org.bjtrc.nazca.app.mgmt.action.CheckValidCodeAction">
+            <result type="json"></result>
+        </action>
+    </package>
+    
+    <package name="installer.portal" extends="struts-default">
+        <global-results>
+            <result name="fail">/errorPage.html</result>    
+        </global-results>
+        
+        <action name="index">
+            <result>/home.jsp</result>
+        </action>    
+
+        <action name="feedback-commit" class="org.bjtrc.nazca.app.mgmt.action.FeedbackCommitAction">
+            <result>/feedback-succeed.jsp</result>
+        </action>
+        
+<!--        action name="change-log-app" class="org.bjtrc.nazca.app.mgmt.action.ChangeLogAction" method="findByLogApp">
+            <获得手机端日志信息 >
+            <result name="appLog">/feedback-change-log.jsp</result>
+        </action -->
+        
+        
+        
+        
+        <action name="change-log-mgmt" class="org.bjtrc.nazca.app.mgmt.action.ChangeLogAction" method="findByLogMgmt">
+            <!--获得后台管理端日志信息 -->
+            <result name="mgmtLog">/feedback-change-log.jsp</result>
+        </action>
+        
+        <!--        <action name="change-log" class="org.bjtrc.nazca.app.mgmt.action.ChangeLogAction">
+            <result>/feedback-change-log.jsp</result>
+        </action>-->
+        
+        <!--        <action name="change-log-top" class="org.bjtrc.nazca.app.mgmt.action.ChangeLogAction">
+            <result>/feedback-change-log-top.jsp</result>
+        </action> -->
+        
+        <action name="validCode" class="org.bjtrc.nazca.app.mgmt.action.ValidCodeAction">
+            <result type="stream">
+                <param name="inputName">image</param>
+            </result>
+        </action>
+
+
+    </package>
+    
+    <constant name="struts.action.extension" value="html" /> 
+</struts>
